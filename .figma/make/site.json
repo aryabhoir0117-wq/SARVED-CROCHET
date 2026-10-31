@@ -1,0 +1,10 @@
+{
+  "description": "Explore handcrafted crochet collections, discover the maker’s story, and contact SARVED CROCHET to request custom gifts and place orders via WhatsApp or Instagram.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
