@@ -16,6 +16,10 @@ const whatsapp =
   'https://wa.me/917774003798?text=Hi%20Pradnya!%20I%20would%20love%20to%20order%20a%20handmade%20crochet%20piece.';
 const instagram = 'https://www.instagram.com/sarved_crochet._';
 
+// Prefix public assets with Vite's configured base path so images work on
+// root domains and sub-path deployments (for example, GitHub Pages).
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
+
 type Product = {
   name: string;
   note: string;
@@ -24,26 +28,26 @@ type Product = {
 };
 
 const products: Product[] = [
-  { name: 'Evil Eye', note: 'A tiny charm for good vibes', image: '/products/keychain-eye.jpg', category: 'Keychains' },
-  { name: 'Sunny Daisy', note: 'A little flower to carry', image: '/products/keychain-flower.jpg', category: 'Keychains' },
-  { name: 'Dreamy Tortoise', note: 'Slow steps, big dreams', image: '/products/keychain-tortoise.jpg', category: 'Keychains' },
-  { name: 'Little Hero', note: 'For the hero in your heart', image: '/products/keychain-spider.jpg', category: 'Keychains' },
-  { name: 'Pastel Pop', note: 'Small size, big smiles', image: '/products/keychain-ball.jpg', category: 'Keychains' },
-  { name: 'Cuddly Kitty', note: 'Soft, sweet and pocket-sized', image: '/products/keychain-kitty.jpg', category: 'Keychains' },
-  { name: 'Short Gajra', note: 'Everyday jasmine charm', image: '/products/gajra-short.jpg', category: 'Gajra' },
-  { name: 'Long Gajra', note: 'Graceful festive blooms', image: '/products/gajra-long.jpg', category: 'Gajra' },
-  { name: 'Gajra Scrunchie', note: 'A soft halo of flowers', image: '/products/gajra-scrunchie.jpg', category: 'Gajra' },
-  { name: 'Sunflower Clips', note: 'A sunny pair for your hair', image: '/products/clip-sunflower.jpg', category: 'Hair' },
-  { name: 'Lavender Clips', note: 'Dreamy lilac petals', image: '/products/clip-lavender.jpg', category: 'Hair' },
-  { name: 'Daisy Clips', note: 'Fresh-picked, forever', image: '/products/clip-daisy.jpg', category: 'Hair' },
-  { name: 'Red Bloom Clips', note: 'A bright little flourish', image: '/products/clip-red.jpg', category: 'Hair' },
-  { name: 'Classic Thalposh', note: 'Warmth for your table', image: '/products/thalposh-classic.jpg', category: 'Home' },
-  { name: 'Floral Coasters', note: 'Tiny gardens for your cup', image: '/products/coasters-floral.jpg', category: 'Home' },
-  { name: 'Pink Petal Thalposh', note: 'A playful table bloom', image: '/products/thalposh-pink.jpg', category: 'Home' },
-  { name: 'Leaf Thalposh', note: 'A handmade botanical accent', image: '/products/thalposh-leaf.jpg', category: 'Home' },
-  { name: 'Pastel Bouquet', note: 'Flowers that stay forever', image: '/products/bouquet-pastel.jpg', category: 'Gifts' },
-  { name: 'Crochet Purse', note: 'Small bag, big happiness', image: '/products/crochet-purse.jpg', category: 'Gifts' },
-  { name: 'Bottle Holder', note: 'Carry a little handmade joy', image: '/products/bottle-holder.jpg', category: 'Gifts' },
+  { name: 'Evil Eye', note: 'A tiny charm for good vibes', image: publicAsset('products/keychain-eye.jpg'), category: 'Keychains' },
+  { name: 'Sunny Daisy', note: 'A little flower to carry', image: publicAsset('products/keychain-flower.jpg'), category: 'Keychains' },
+  { name: 'Dreamy Tortoise', note: 'Slow steps, big dreams', image: publicAsset('products/keychain-tortoise.jpg'), category: 'Keychains' },
+  { name: 'Little Hero', note: 'For the hero in your heart', image: publicAsset('products/keychain-spider.jpg'), category: 'Keychains' },
+  { name: 'Pastel Pop', note: 'Small size, big smiles', image: publicAsset('products/keychain-ball.jpg'), category: 'Keychains' },
+  { name: 'Cuddly Kitty', note: 'Soft, sweet and pocket-sized', image: publicAsset('products/keychain-kitty.jpg'), category: 'Keychains' },
+  { name: 'Short Gajra', note: 'Everyday jasmine charm', image: publicAsset('products/gajra-short.jpg'), category: 'Gajra' },
+  { name: 'Long Gajra', note: 'Graceful festive blooms', image: publicAsset('products/gajra-long.jpg'), category: 'Gajra' },
+  { name: 'Gajra Scrunchie', note: 'A soft halo of flowers', image: publicAsset('products/gajra-scrunchie.jpg'), category: 'Gajra' },
+  { name: 'Sunflower Clips', note: 'A sunny pair for your hair', image: publicAsset('products/clip-sunflower.jpg'), category: 'Hair' },
+  { name: 'Lavender Clips', note: 'Dreamy lilac petals', image: publicAsset('products/clip-lavender.jpg'), category: 'Hair' },
+  { name: 'Daisy Clips', note: 'Fresh-picked, forever', image: publicAsset('products/clip-daisy.jpg'), category: 'Hair' },
+  { name: 'Red Bloom Clips', note: 'A bright little flourish', image: publicAsset('products/clip-red.jpg'), category: 'Hair' },
+  { name: 'Classic Thalposh', note: 'Warmth for your table', image: publicAsset('products/thalposh-classic.jpg'), category: 'Home' },
+  { name: 'Floral Coasters', note: 'Tiny gardens for your cup', image: publicAsset('products/coasters-floral.jpg'), category: 'Home' },
+  { name: 'Pink Petal Thalposh', note: 'A playful table bloom', image: publicAsset('products/thalposh-pink.jpg'), category: 'Home' },
+  { name: 'Leaf Thalposh', note: 'A handmade botanical accent', image: publicAsset('products/thalposh-leaf.jpg'), category: 'Home' },
+  { name: 'Pastel Bouquet', note: 'Flowers that stay forever', image: publicAsset('products/bouquet-pastel.jpg'), category: 'Gifts' },
+  { name: 'Crochet Purse', note: 'Small bag, big happiness', image: publicAsset('products/crochet-purse.jpg'), category: 'Gifts' },
+  { name: 'Bottle Holder', note: 'Carry a little handmade joy', image: publicAsset('products/bottle-holder.jpg'), category: 'Gifts' },
 ];
 
 const navItems = [
@@ -159,13 +163,13 @@ function App() {
 
         <div className="hero-collage" aria-label="A selection of handmade crochet pieces">
           <motion.figure className="hero-card hero-card-main" initial={{ opacity: 0, y: 24, rotate: 2 }} animate={{ opacity: 1, y: 0, rotate: -2 }} transition={{ duration: 0.8 }}>
-            <img src="/products/bouquet-pastel.jpg" alt="Pastel handmade crochet flower bouquet" />
+            <img src={publicAsset('products/bouquet-pastel.jpg')} alt="Pastel handmade crochet flower bouquet" />
           </motion.figure>
           <motion.figure className="hero-card hero-card-top" animate={{ y: [0, -8, 0] }} transition={{ duration: 5, repeat: Infinity }}>
-            <img src="/products/keychain-tortoise.jpg" alt="Crochet tortoise keychain" />
+            <img src={publicAsset('products/keychain-tortoise.jpg')} alt="Crochet tortoise keychain" />
           </motion.figure>
           <motion.figure className="hero-card hero-card-bottom" animate={{ y: [0, 8, 0] }} transition={{ duration: 6, repeat: Infinity }}>
-            <img src="/products/gajra-scrunchie.jpg" alt="Crochet gajra scrunchie" />
+            <img src={publicAsset('products/gajra-scrunchie.jpg')} alt="Crochet gajra scrunchie" />
           </motion.figure>
           <span className="tape tape-one" />
           <span className="hero-note note-one">Made with love ♡</span>
@@ -188,11 +192,11 @@ function App() {
       <section className="story section-shell" id="story">
         <div className="story-images">
           <figure className="story-main-photo">
-            <img src="/products/hairtie-daisy.jpg" alt="Handmade daisy crochet hair tie" />
+            <img src={publicAsset('products/hairtie-daisy.jpg')} alt="Handmade daisy crochet hair tie" />
             <figcaption>Every detail, made slowly.</figcaption>
           </figure>
           <figure className="story-small-photo">
-            <img src="/products/crochet-purse.jpg" alt="Handmade floral crochet purse" />
+            <img src={publicAsset('products/crochet-purse.jpg')} alt="Handmade floral crochet purse" />
           </figure>
           <span className="stitched-heart"><Heart fill="currentColor" /></span>
         </div>
@@ -242,7 +246,7 @@ function App() {
 
         <div className="collection-chapter hair-chapter">
           <div className="hair-feature">
-            <img src="/products/hairtie-sunflower.jpg" alt="Sunflower crochet hair tie" />
+            <img src={publicAsset('products/hairtie-sunflower.jpg')} alt="Sunflower crochet hair tie" />
             <span>new little bloom</span>
           </div>
           <div className="chapter-intro">
@@ -268,9 +272,9 @@ function App() {
             <OrderLink>Customise a set</OrderLink>
           </div>
           <div className="home-mosaic">
-            <figure className="mosaic-large"><img src="/products/thalposh-classic.jpg" alt="Classic crochet thalposh" /><figcaption>Classic Thalposh</figcaption></figure>
-            <figure><img src="/products/coasters-floral.jpg" alt="Crochet flower coasters" /><figcaption>Floral Coasters</figcaption></figure>
-            <figure><img src="/products/thalposh-leaf.jpg" alt="Leaf crochet thalposh" /><figcaption>Leaf Thalposh</figcaption></figure>
+            <figure className="mosaic-large"><img src={publicAsset('products/thalposh-classic.jpg')} alt="Classic crochet thalposh" /><figcaption>Classic Thalposh</figcaption></figure>
+            <figure><img src={publicAsset('products/coasters-floral.jpg')} alt="Crochet flower coasters" /><figcaption>Floral Coasters</figcaption></figure>
+            <figure><img src={publicAsset('products/thalposh-leaf.jpg')} alt="Leaf crochet thalposh" /><figcaption>Leaf Thalposh</figcaption></figure>
           </div>
         </div>
       </section>
@@ -334,7 +338,7 @@ function App() {
 
       <section className="custom section-shell" id="custom">
         <div className="custom-visual">
-          <img src="/products/bouquet-pastel.jpg" alt="Custom pastel crochet bouquet" />
+          <img src={publicAsset('products/bouquet-pastel.jpg')} alt="Custom pastel crochet bouquet" />
           <span className="custom-sticker">made for<br /><b>you</b> ♡</span>
           <Doodle />
         </div>
